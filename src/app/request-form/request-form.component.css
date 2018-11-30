@@ -1,0 +1,27 @@
+/*
+.page-header {
+    margin-inline-start: 20%;
+    margin-inline-end: 20%;
+    
+}
+.form {
+    padding: 10px;
+    width: 600px;
+    height: 350px;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}*/
+.row {
+    padding: 1%;
+}
+.submitButton {
+    padding-top: 30px;
+    padding-left: 40%;
+}

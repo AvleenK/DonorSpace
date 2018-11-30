@@ -1,16 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RegisterComponent } from './main-page/register/register.component';
+import { RegFormComponent } from './registeration-form/reg-form/reg-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NavBarComponentComponent } from './nav-bar-component/nav-bar-component.component';
+import { AboutUsComponentComponent } from './about-us-component/about-us-component.component';
+import { RouterModule } from '@angular/router';
+import { RequestFormComponent } from './request-form/request-form.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegisterComponent,
+    RegFormComponent,
+    NavBarComponentComponent,
+    AboutUsComponentComponent,
+    RequestFormComponent,
+    NotFoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path: '', component: RegisterComponent},
+      {path: 'registeration-form', component: RegFormComponent},
+      {path: 'request', component: RequestFormComponent},
+      {path: '**', component: NotFoundComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,47 @@
+section.section-ct.footer {
+    background-color: #ebebeb;
+    padding: 25px 0;
+}
+#welcome-page .section-ct.seven .section, #welcome-page .section-ct.seven .section a, #welcome-page .section-ct.seven .section a:active, #welcome-page .section-ct.seven .section a:focus, #welcome-page .section-ct.seven .section a:hover, #welcome-page .section-ct.six .section, #welcome-page .section-ct.six .section a, #welcome-page .section-ct.six .section a:active, #welcome-page .section-ct.six .section a:focus, #welcome-page .section-ct.six .section a:hover, #welcome-page section.section-ct.footer, #welcome-page section.section-ct.footer .section #footer-pages a {
+    color: #fff;
+}
+#welcome-page .section-ct {
+    text-align: center;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+article, aside, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+body, h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeLegibility;
+}
+body {
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+.popover, .tooltip, body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
