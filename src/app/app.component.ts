@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'Donor Space';
-  private apiUrl = '';
+  private apiUrl = 'http://206.189.139.250:3000/donor/create';
   data: any = {};
 
   constructor(private http: HttpClient){
