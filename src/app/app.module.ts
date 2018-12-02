@@ -12,6 +12,7 @@ import { RequestFormComponent } from './request-form/request-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { RedirectRegisterComponent } from './redirect-register/redirect-register.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RedirectRegisterComponent } from './redirect-register/redirect-register
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: RegisterComponent},
       {path: 'registeration-form', component: RegFormComponent},
