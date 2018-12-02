@@ -12,7 +12,9 @@ import { RequestFormComponent } from './request-form/request-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { RedirectRegisterComponent } from './redirect-register/redirect-register.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { MedicalUploadComponent } from './medical-upload/medical-upload.component';
+import { MedicalDoneComponent } from './medical-done/medical-done.component'; 
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     RequestFormComponent,
     NotFoundComponent,
     FooterComponent,
-    RedirectRegisterComponent
+    RedirectRegisterComponent,
+    MedicalUploadComponent,
+    MedicalDoneComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
       {path: 'registeration-form', component: RegFormComponent},
       {path: 'request', component: RequestFormComponent},
       {path: 'redirect', component: RedirectRegisterComponent},
+      {path: 'medicalUpload', component: MedicalUploadComponent},
+      {path: 'medicalDone', component: MedicalDoneComponent},
       {path: '**', component: NotFoundComponent}
     ])
   ],

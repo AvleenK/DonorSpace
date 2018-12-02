@@ -1,0 +1,6 @@
+<h2>Please Upload your verified medical Forms</h2>
+
+<form [formGroup]="formGroup" novalidate (ngSubmit)="onSubmit()">
+  <input type="file" (change)="onFileChange($event)"/>
+  <button type="submit" [disabled]="formGroup.invalid || formGroup.prestine">Upload</button>
+</form>

@@ -26,7 +26,7 @@ export class RequestFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/medicalUpload']);
   }
 
   ngOnInit() {
