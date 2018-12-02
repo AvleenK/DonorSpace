@@ -1,7 +1,4 @@
-  <!--Reactive form 
-  -more control over structure and behaviour of form-->
-
-<form class="form" [formGroup]="reqForm">
+<form class="form" [formGroup]="reqForm" name="reqForm" (ngSubmit)="onSubmit()">
   <!-- EMAIL -->
   <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': reqForm.get('email').errors && (reqForm.get('email').touched || reqForm.get('email').dirty)}">
     <label for="email">Email:</label>
@@ -11,7 +8,7 @@
   <!-- PHONE NUMBER-->
   <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': reqForm.get('phoneNo').errors && (reqForm.get('phoneNo').touched || reqForm.get('phoneNo').dirty)}">
     <label for="phoneNo">Phone No.:</label>
-    <input formControlName="phoneNo" id="phoneNo" type="number" class="form-control" placeholder="9876543210">
+    <input formControlName="phoneNo" id="phoneNo" type="text" class="form-control" placeholder="9876543210">
   </div>
   
   <!-- NAME -->
@@ -22,12 +19,13 @@
   
   <!-- BLOOD GROUP -->
   <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': reqForm.get('bloodGroup').errors && (reqForm.get('bloodGroup').touched || reqForm.get('bloodGroup').dirty)}">
-    <!--make it drop down-->
+    <br>
     <label for="bloodGroup">Blood Group:</label>
+
     <input formControlName="bloodGroup" id="bloodGroup" type="text" class="form-control" placeholder="B+">
   </div>
 
-  <!-- ADDRESS FIELDS -->
+  <!-- ADDRESS -->
   <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': reqForm.get('address').errors && (reqForm.get('address').touched || reqForm.get('address').dirty)}">
     <label for="address">Address:</label>
     <input formControlName="address" id="address" type="text" class="form-control" placeholder="house address/flat address">
@@ -47,7 +45,7 @@
   
   <!-- SUBMIT BUTTON -->
   <div class="submitButton">
-    <button class="btn btn-primary">Submit Request</button>
+    <button type="submit" class="btn btn-primary" id="submitBtn" [disabled]="regForm.invalid">Submit Request</button>
   </div>
 
 </form>

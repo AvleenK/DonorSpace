@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  /*
   title = 'Donor Space';
   private apiUrl = 'http://206.189.139.250:3000/donor/create';
   data: any = {};
@@ -28,4 +29,5 @@ export class AppComponent {
       this.data = res;
     })
   }
+  */
 }

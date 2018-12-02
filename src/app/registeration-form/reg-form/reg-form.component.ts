@@ -34,10 +34,6 @@ export class RegFormComponent implements OnInit {
     this.router.navigate(['/redirect']);
   }
 
-  closeModal() {
-    
-  }
-
   ngOnInit() {
     this.regForm = this.fb.group({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -52,7 +48,6 @@ export class RegFormComponent implements OnInit {
     var submitBtn = document.getElementById("submitBtn");
     submitBtn.addEventListener("click", (e:Event) => {
       this.displayData();
-      this.closeModal();
     });
   }
 }
