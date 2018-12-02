@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './main-page/register/register.component';
 import { RegFormComponent } from './registeration-form/reg-form/reg-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavBarComponentComponent } from './nav-bar-component/nav-bar-component.component';
 import { AboutUsComponentComponent } from './about-us-component/about-us-component.component';
 import { RouterModule } from '@angular/router';
@@ -21,12 +21,13 @@ import { FooterComponent } from './footer/footer.component';
     AboutUsComponentComponent,
     RequestFormComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forRoot([
       {path: '', component: RegisterComponent},
       {path: 'registeration-form', component: RegFormComponent},

@@ -1,7 +1,4 @@
-  <!--Reactive form 
-  -more control over structure and behaviour of form-->
-  
-<form class="form" [formGroup]="regForm">
+<form class="form" [formGroup]="regForm" name="regForm" action="">
   <!-- EMAIL -->
   <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': regForm.get('email').errors && (regForm.get('email').touched || regForm.get('email').dirty)}">
     <label for="email">Email:</label>
@@ -21,16 +18,22 @@
   </div>
 
   <!-- AGE -->
-  <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': regForm.get('age').errors && (regForm.get('age').touched || regForm.get('age').dirty)}">
-    <label for="age">Age:</label>
-    <input formControlName="age" id="age" type="text" class="form-control" placeholder="18">
+  <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': regForm.get('dob').errors && (regForm.get('dob').touched || regForm.get('dob').dirty)}">
+    <label for="age">Date of Birth:</label>
+    <input formControlName="dob" id="dob" type="date" class="form-control">
   </div>
    
   <!-- BLOOD GROUP -->
   <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': regForm.get('bloodGroup').errors && (regForm.get('bloodGroup').touched || regForm.get('bloodGroup').dirty)}">
     <!--make it drop down-->
-    <label for="bloodGroup">Blood Group:</label>
+    <br>
+    <label for="bloodGroup">Blood Group:&nbsp;</label>
+    <!--
     <input formControlName="bloodGroup" id="bloodGroup" type="text" class="form-control" placeholder="B+">
+    -->
+    <select fromControlName="bloodGroup">
+      <option *ngFor="let grp of bloodGroupList" id="bloodGroup" class="form-control">{{grp}}</option>
+    </select>
   </div>
 
   <!-- ADDRESS -->
@@ -53,8 +56,7 @@
 
   <!-- SUBMIT BUTTON -->
   <div class="submitButton">
-    <button class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" id="submitBtn" [disabled]="regForm.invalid">Submit</button>
   </div>
 
 </form>
-  
