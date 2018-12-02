@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { RedirectRegisterComponent } from './redirect-register/redirect-register.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
     RequestFormComponent,
     NotFoundComponent,
     FooterComponent,
+    RedirectRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { FooterComponent } from './footer/footer.component';
       {path: '', component: RegisterComponent},
       {path: 'registeration-form', component: RegFormComponent},
       {path: 'request', component: RequestFormComponent},
+      {path: 'redirect', component: RedirectRegisterComponent},
       {path: '**', component: NotFoundComponent}
     ])
   ],

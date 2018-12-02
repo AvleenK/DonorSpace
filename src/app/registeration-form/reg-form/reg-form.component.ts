@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder} from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reg-form',
@@ -14,7 +15,7 @@ export class RegFormComponent implements OnInit {
   //List of all the blood groups
   bloodGroupList = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
   }
 
 
@@ -29,18 +30,29 @@ export class RegFormComponent implements OnInit {
     console.log(this.regForm.controls.pin.value);
   }
 
+  onSubmit() {
+    this.router.navigate(['/redirect']);
+  }
+
+  closeModal() {
+    
+  }
+
   ngOnInit() {
     this.regForm = this.fb.group({
       email: new FormControl('', [Validators.required, Validators.email]),
-      phoneNo: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
-      username: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      phoneNo: new FormControl('', [Validators.required, Validators.pattern('[0-9]*'), Validators.maxLength(10), Validators.minLength(10)]),
+      username: new FormControl('', [Validators.required, Validators.pattern('[A-Za-z]*'),Validators.minLength(4)]),
       dob: new FormControl('', [Validators.required]),
-      bloodGroup: new FormControl(''),
+      bloodGroup: new FormControl('', [Validators.required, Validators.pattern('(A|B|AB|O)[-+]')]),
       address: new FormControl('', Validators.required),
       district: new FormControl('', Validators.required),
       pin: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(6)])
     })
     var submitBtn = document.getElementById("submitBtn");
-    submitBtn.addEventListener("click", (e:Event) => this.displayData());
+    submitBtn.addEventListener("click", (e:Event) => {
+      this.displayData();
+      this.closeModal();
+    });
   }
 }

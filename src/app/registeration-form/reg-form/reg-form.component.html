@@ -1,4 +1,5 @@
-<form class="form" [formGroup]="regForm" name="regForm" action="">
+<form class="form" [formGroup]="regForm" name="regForm" action="http://206.189.139.250:3000/donor/create"
+(ngSubmit)="onSubmit()">
   <!-- EMAIL -->
   <div class="form-group" class="col-lg-4" [ngClass]="{'alert alert-danger': regForm.get('email').errors && (regForm.get('email').touched || regForm.get('email').dirty)}">
     <label for="email">Email:</label>
@@ -28,12 +29,13 @@
     <!--make it drop down-->
     <br>
     <label for="bloodGroup">Blood Group:&nbsp;</label>
-    <!--
+    
     <input formControlName="bloodGroup" id="bloodGroup" type="text" class="form-control" placeholder="B+">
-    -->
+    <!--
     <select fromControlName="bloodGroup">
       <option *ngFor="let grp of bloodGroupList" id="bloodGroup" class="form-control">{{grp}}</option>
     </select>
+    -->
   </div>
 
   <!-- ADDRESS -->
